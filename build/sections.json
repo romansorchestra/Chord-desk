@@ -1,0 +1,78 @@
+{
+ "sections": {
+  "violins1": {
+   "sustain": "Strings/1st-violin-SEC-sustain.sfz",
+   "staccato": "Strings/1st-violin-SEC-staccato.sfz",
+   "pizzicato": "Strings/1st-violin-SEC-pizzicato.sfz",
+   "tremolo": "Strings/1st-violin-SEC-tremolo.sfz",
+   "accent": "Strings/1st-violin-SEC-accent.sfz"
+  },
+  "violins2": {
+   "sustain": "Strings/2nd-violin-SEC-sustain.sfz",
+   "staccato": "Strings/2nd-violin-SEC-staccato.sfz",
+   "pizzicato": "Strings/2nd-violin-SEC-pizzicato.sfz",
+   "tremolo": "Strings/2nd-violin-SEC-tremolo.sfz",
+   "accent": "Strings/2nd-violin-SEC-accent.sfz"
+  },
+  "violas": {
+   "sustain": "Strings/viola-SEC-sustain.sfz",
+   "staccato": "Strings/viola-SEC-staccato.sfz",
+   "pizzicato": "Strings/viola-SEC-pizzicato.sfz",
+   "tremolo": "Strings/viola-SEC-tremolo.sfz",
+   "accent": "Strings/viola-SEC-accent.sfz"
+  },
+  "celli": {
+   "sustain": "Strings/cello-SEC-sustain.sfz",
+   "staccato": "Strings/cello-SEC-staccato.sfz",
+   "pizzicato": "Strings/cello-SEC-pizzicato.sfz",
+   "tremolo": "Strings/cello-SEC-tremolo.sfz",
+   "accent": "Strings/cello-SEC-accent.sfz"
+  },
+  "basses": {
+   "sustain": "Strings/bass-SEC-sustain.sfz",
+   "staccato": "Strings/bass-SEC-staccato.sfz",
+   "pizzicato": "Strings/bass-SEC-pizzicato.sfz",
+   "tremolo": "Strings/bass-SEC-tremolo.sfz",
+   "accent": "Strings/bass-SEC-accent.sfz"
+  },
+  "horns": {
+   "sustain": "Brass/french-horn-SEC-sustain.sfz",
+   "staccato": "Brass/french-horn-SEC-staccato.sfz"
+  },
+  "trumpets": {
+   "sustain": "Brass/trumpet-SEC-sustain.sfz",
+   "staccato": "Brass/trumpet-SEC-staccato.sfz"
+  },
+  "trombones": {
+   "sustain": "Brass/trombone-SEC-sustain.sfz",
+   "staccato": "Brass/trombone-SEC-staccato.sfz"
+  },
+  "tuba": {
+   "sustain": "Brass/tuba-SOLO-sustain.sfz",
+   "staccato": "Brass/tuba-SOLO-staccato.sfz"
+  },
+  "flutes": {
+   "sustain": "Woodwinds/flute-SEC-sustain.sfz",
+   "staccato": "Woodwinds/flute-SEC-staccato.sfz"
+  },
+  "oboes": {
+   "sustain": "Woodwinds/oboe-SEC-sustain.sfz",
+   "staccato": "Woodwinds/oboe-SEC-staccato.sfz"
+  },
+  "clarinets": {
+   "sustain": "Woodwinds/clarinet-SEC-sustain.sfz",
+   "staccato": "Woodwinds/clarinet-SEC-staccato.sfz"
+  },
+  "bassoons": {
+   "sustain": "Woodwinds/bassoon-SEC-sustain.sfz",
+   "staccato": "Woodwinds/bassoon-SEC-staccato.sfz"
+  },
+  "choir-men": {
+   "sustain": "Vocals/choir-MALE-sustain.sfz"
+  },
+  "choir-women": {
+   "sustain": "Vocals/choir-FEMALE-sustain.sfz"
+  }
+ },
+ "missing": []
+}

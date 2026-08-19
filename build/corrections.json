@@ -1,0 +1,1370 @@
+[
+[
+"Strings/1st-violin-SEC-sustain.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-sus-e4.wav",
+0.13,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-sustain.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-sus-e5.wav",
+0.142,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-sustain.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-sus-a#5.wav",
+0.121,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-sustain.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-sus-e6.wav",
+0.207,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-sustain.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-sus-g6.wav",
+0.139,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-g3-PB.wav",
+0.95,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-a#3-PB.wav",
+0.955,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-c#4-PB.wav",
+0.994,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-e4-PB.wav",
+1.003,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-g4-PB.wav",
+0.965,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-a#4-PB.wav",
+0.981,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-c#5-PB.wav",
+0.981,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-e5-PB.wav",
+0.968,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-g5-PB.wav",
+0.946,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-a#5-PB.wav",
+0.983,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-c#6-PB.wav",
+0.982,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-e6-PB.wav",
+0.963,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-g6-PB.wav",
+1.01,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-a#6-PB.wav",
+0.967,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-pizzicato.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-piz-rr1-c#4-PB.wav",
+-0.311,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/4_Eb-PB.wav",
+-0.203,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/4_F-PB.wav",
+-0.237,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/4_A-PB.wav",
+-0.159,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/4_B-PB.wav",
+-0.478,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/5_Db-PB.wav",
+-0.314,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_Db-PB.wav",
+0.226,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_Eb-PB.wav",
+0.214,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_F-PB.wav",
+0.182,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_G-PB.wav",
+0.531,
+"dropped: pitch unreadable"
+],
+[
+"Strings/1st-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_A-PB.wav",
+0.325,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_B-PB.wav",
+0.378,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-g3-PB.wav",
+0.95,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-a#3-PB.wav",
+0.955,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-c#4-PB.wav",
+0.994,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-e4-PB.wav",
+1.003,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-g4-PB.wav",
+0.965,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-a#4-PB.wav",
+0.981,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-c#5-PB.wav",
+0.981,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-e5-PB.wav",
+0.968,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-g5-PB.wav",
+0.946,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-a#5-PB.wav",
+0.983,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-c#6-PB.wav",
+0.982,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-e6-PB.wav",
+0.963,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-g6-PB.wav",
+1.01,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-stc-rr2-a#6-PB.wav",
+0.967,
+"re-keyed +1"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-sus-e4.wav",
+0.13,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-sus-e5.wav",
+0.142,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-sus-a#5.wav",
+0.121,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-sus-e6.wav",
+0.207,
+"fine-tuned"
+],
+[
+"Strings/1st-violin-SEC-accent.sfz",
+"libs/SSO/Samples/1st Violins/1st-violins-sus-g6.wav",
+0.139,
+"fine-tuned"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-g3-PB.wav",
+1.016,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-a#3-PB.wav",
+0.979,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-c#4-PB.wav",
+1.009,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-e4-PB.wav",
+1.019,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-g4-PB.wav",
+1.024,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-a#4-PB.wav",
+0.994,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-c#5-PB.wav",
+1.015,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-e5-PB.wav",
+0.994,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-g5-PB.wav",
+1.0,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-a#5-PB.wav",
+1.001,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-c#6-PB.wav",
+1.018,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-e6-PB.wav",
+0.986,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-g6-PB.wav",
+0.952,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-staccato.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-a#6-PB.wav",
+0.999,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/4_Eb-PB.wav",
+-0.203,
+"fine-tuned"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/4_F-PB.wav",
+-0.237,
+"fine-tuned"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/4_A-PB.wav",
+-0.159,
+"fine-tuned"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/4_B-PB.wav",
+-0.478,
+"fine-tuned"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/5_Db-PB.wav",
+-0.314,
+"fine-tuned"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_Db-PB.wav",
+0.226,
+"fine-tuned"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_Eb-PB.wav",
+0.214,
+"fine-tuned"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_F-PB.wav",
+0.182,
+"fine-tuned"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_G-PB.wav",
+0.531,
+"dropped: pitch unreadable"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_A-PB.wav",
+0.325,
+"fine-tuned"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_B-PB.wav",
+0.378,
+"fine-tuned"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/Other/Samples/2nd-Violin-Section/G3-tremolo-PB-loop.wav",
+0.125,
+"fine-tuned"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/Other/Samples/2nd-Violin-Section/A3-tremolo-PB-loop.wav",
+-12.017,
+"correction ignored: outside the section's range"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/Other/Samples/2nd-Violin-Section/D7-tremolo-PB-loop.wav",
+-12.027,
+"re-keyed -12"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/Other/Samples/2nd-Violin-Section/E7-tremolo-PB-loop.wav",
+-12.011,
+"re-keyed -12"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/Other/Samples/2nd-Violin-Section/G7-tremolo-PB-loop.wav",
+-11.983,
+"re-keyed -12"
+],
+[
+"Strings/2nd-violin-SEC-tremolo.sfz",
+"libs/Other/Samples/2nd-Violin-Section/A7-tremolo-PB-loop.wav",
+-11.984,
+"re-keyed -12"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-g3-PB.wav",
+1.016,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-a#3-PB.wav",
+0.979,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-c#4-PB.wav",
+1.009,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-e4-PB.wav",
+1.019,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-g4-PB.wav",
+1.024,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-a#4-PB.wav",
+0.994,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-c#5-PB.wav",
+1.015,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-e5-PB.wav",
+0.994,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-g5-PB.wav",
+1.0,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-a#5-PB.wav",
+1.001,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-c#6-PB.wav",
+1.018,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-e6-PB.wav",
+0.986,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-g6-PB.wav",
+0.952,
+"re-keyed +1"
+],
+[
+"Strings/2nd-violin-SEC-accent.sfz",
+"libs/SSO/Samples/2nd Violins/2nd-violins-stc-rr2-a#6-PB.wav",
+0.999,
+"re-keyed +1"
+],
+[
+"Strings/viola-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Violas/violas-piz-rr1-f#3-PB.wav",
+0.369,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Violas/violas-piz-rr1-a3-PB.wav",
+0.218,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Violas/violas-piz-rr1-c4-PB.wav",
+0.154,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Violas/violas-piz-rr1-f#4-PB.wav",
+-0.194,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Violas/violas-piz-rr1-d#5-PB.wav",
+-19.023,
+"re-keyed -19"
+],
+[
+"Strings/viola-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Violas/violas-piz-rr1-f#5-PB.wav",
+-0.147,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Violas/violas-piz-rr1-a5-PB.wav",
+-0.15,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Violas/violas-piz-rr1-c6-PB.wav",
+-19.015,
+"re-keyed -19"
+],
+[
+"Strings/viola-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/4_Eb-PB.wav",
+-0.203,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/4_F-PB.wav",
+-0.237,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/4_A-PB.wav",
+-0.159,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/4_B-PB.wav",
+-0.478,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/5_Db-PB.wav",
+-0.314,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_Db-PB.wav",
+0.226,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_Eb-PB.wav",
+0.214,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_F-PB.wav",
+0.182,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_G-PB.wav",
+0.531,
+"dropped: pitch unreadable"
+],
+[
+"Strings/viola-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Violin/SoloViolin/Tremulo/6_A-PB.wav",
+0.325,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-tremolo.sfz",
+"libs/Other/Samples/Viola-Section/B4-tremolo-PB-loop.wav",
+-0.121,
+"fine-tuned"
+],
+[
+"Strings/viola-SEC-tremolo.sfz",
+"libs/Other/Samples/Viola-Section/C5-tremolo-PB-loop.wav",
+-0.123,
+"fine-tuned"
+],
+[
+"Strings/cello-SEC-staccato.sfz",
+"libs/VSCO2-CE/Strings/Cello Section/spic/spic_C3_v2_RR1.wav",
+0.166,
+"fine-tuned"
+],
+[
+"Strings/cello-SEC-staccato.sfz",
+"libs/VSCO2-CE/Strings/Cello Section/spic/spic_G3_v2_RR1.wav",
+-0.12,
+"fine-tuned"
+],
+[
+"Strings/cello-SEC-pizzicato.sfz",
+"libs/VSCO2-CE/Strings/Cello Section/pizzT/pizzT_B1_v1_RR1.wav",
+-0.154,
+"fine-tuned"
+],
+[
+"Strings/cello-SEC-pizzicato.sfz",
+"libs/VSCO2-CE/Strings/Cello Section/pizzT/pizzT_C1_v2_RR1.wav",
+11.94,
+"re-keyed +12"
+],
+[
+"Strings/cello-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Cello/CelloSect/Tremulo/2_Bb_t-PB-loop.wav",
+0.229,
+"fine-tuned"
+],
+[
+"Strings/cello-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Cello/CelloSect/Tremulo/3_C_t.wav",
+-0.257,
+"fine-tuned"
+],
+[
+"Strings/cello-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Cello/CelloSect/Tremulo/3_D_t.wav",
+-0.304,
+"fine-tuned"
+],
+[
+"Strings/cello-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Cello/CelloSect/Tremulo/3_E_t.wav",
+-0.16,
+"fine-tuned"
+],
+[
+"Strings/cello-SEC-tremolo.sfz",
+"libs/NoBudgetOrch2/Cello/CelloSect/Tremulo/4_C_t-PB-loop.wav",
+-0.188,
+"fine-tuned"
+],
+[
+"Strings/cello-SEC-accent.sfz",
+"libs/VSCO2-CE/Strings/Cello Section/spic/spic_C3_v2_RR1.wav",
+0.166,
+"fine-tuned"
+],
+[
+"Strings/cello-SEC-accent.sfz",
+"libs/VSCO2-CE/Strings/Cello Section/spic/spic_G3_v2_RR1.wav",
+-0.12,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-sustain.sfz",
+"libs/SSO/Samples/Basses/basses-sus-c1-PB-loop.wav",
+-0.149,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr1-c2.wav",
+0.131,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr1-a2.wav",
+0.129,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr1-f#3.wav",
+0.238,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-c1.wav",
+1.149,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-d#1.wav",
+1.123,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-f#1.wav",
+1.063,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-a1.wav",
+1.097,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-c2.wav",
+1.09,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-d#2.wav",
+0.958,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-f#2.wav",
+1.022,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-a2.wav",
+1.101,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-c3.wav",
+1.016,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-d#3.wav",
+1.159,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-f#3.wav",
+1.203,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-a3.wav",
+1.016,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-staccato.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-c4.wav",
+0.981,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Basses/basses-piz-rr2-f#1-PB.wav",
+0.92,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Basses/basses-piz-rr2-c2-PB.wav",
+1.237,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Basses/basses-piz-rr2-f#2-PB.wav",
+0.973,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Basses/basses-piz-rr1-a2-PB.wav",
+-0.252,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-pizzicato.sfz",
+"libs/SSO/Samples/Basses/basses-piz-rr2-a3-PB.wav",
+1.008,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-tremolo.sfz",
+"libs/Other/Samples/Bass-Section/G1-tremolo-PB.wav",
+0.212,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-tremolo.sfz",
+"libs/Other/Samples/Bass-Section/B1-tremolo-PB.wav",
+0.128,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-tremolo.sfz",
+"libs/Other/Samples/Bass-Section/D3-tremolo-PB.wav",
+0.159,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-tremolo.sfz",
+"libs/Other/Samples/Bass-Section/E3-tremolo-PB.wav",
+0.148,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-tremolo.sfz",
+"libs/Other/Samples/Bass-Section/F3-tremolo-PB.wav",
+0.176,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr1-c2.wav",
+0.131,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr1-a2.wav",
+0.129,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr1-f#3.wav",
+0.238,
+"fine-tuned"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-c1.wav",
+1.149,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-d#1.wav",
+1.123,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-f#1.wav",
+1.063,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-a1.wav",
+1.097,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-c2.wav",
+1.09,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-d#2.wav",
+0.958,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-f#2.wav",
+1.022,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-a2.wav",
+1.101,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-c3.wav",
+1.016,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-d#3.wav",
+1.159,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-f#3.wav",
+1.203,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-a3.wav",
+1.016,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-stc-rr2-c4.wav",
+0.981,
+"re-keyed +1"
+],
+[
+"Strings/bass-SEC-accent.sfz",
+"libs/SSO/Samples/Basses/basses-sus-c1-PB-loop.wav",
+-0.149,
+"fine-tuned"
+],
+[
+"Brass/french-horn-SEC-sustain.sfz",
+"libs/Mattias-Westlund/Horns/Samples/horns-sus-ff-e2-PB-loop.wav",
+-0.387,
+"fine-tuned"
+],
+[
+"Brass/french-horn-SEC-sustain.sfz",
+"libs/Mattias-Westlund/Horns/Samples/horns-sus-ff-e4-PB-loop.wav",
+0.125,
+"fine-tuned"
+],
+[
+"Brass/french-horn-SEC-staccato.sfz",
+"libs/Mattias-Westlund/Horns/Samples/horns-sus-ff-e2-PB-loop.wav",
+-0.787,
+"re-keyed -1"
+],
+[
+"Brass/french-horn-SEC-staccato.sfz",
+"libs/Mattias-Westlund/Horns/Samples/horns-sus-ff-a#2-PB-loop.wav",
+-0.294,
+"fine-tuned"
+],
+[
+"Brass/french-horn-SEC-staccato.sfz",
+"libs/Mattias-Westlund/Horns/Samples/horns-sus-ff-g3-PB-loop.wav",
+-0.198,
+"fine-tuned"
+],
+[
+"Brass/french-horn-SEC-staccato.sfz",
+"libs/Mattias-Westlund/Horns/Samples/horns-sus-ff-e4-PB-loop.wav",
+0.125,
+"fine-tuned"
+],
+[
+"Brass/french-horn-SEC-staccato.sfz",
+"libs/Mattias-Westlund/Horns/Samples/horns-sus-mp-a#2-PB-loop.wav",
+-0.169,
+"fine-tuned"
+],
+[
+"Brass/trumpet-SEC-sustain.sfz",
+"libs/NoBudgetOrch2/Trumpet/TrumpetSect/Sustain/5_F.wav",
+0.126,
+"fine-tuned"
+],
+[
+"Brass/trumpet-SEC-sustain.sfz",
+"libs/NoBudgetOrch2/Trumpet/TrumpetSect/Sustain/5_G.wav",
+0.143,
+"fine-tuned"
+],
+[
+"Brass/trumpet-SEC-sustain.sfz",
+"libs/NoBudgetOrch2/Trumpet/TrumpetSect/Sustain/5_A.wav",
+0.142,
+"fine-tuned"
+],
+[
+"Brass/trumpet-SEC-sustain.sfz",
+"libs/NoBudgetOrch2/Trumpet/TrumpetSect/Sustain/6_Db.wav",
+0.121,
+"fine-tuned"
+],
+[
+"Brass/trumpet-SEC-staccato.sfz",
+"libs/NoBudgetOrch2/Trumpet/TrumpetSect/Sustain/5_F.wav",
+0.126,
+"fine-tuned"
+],
+[
+"Brass/trumpet-SEC-staccato.sfz",
+"libs/NoBudgetOrch2/Trumpet/TrumpetSect/Sustain/5_G.wav",
+0.143,
+"fine-tuned"
+],
+[
+"Brass/trumpet-SEC-staccato.sfz",
+"libs/NoBudgetOrch2/Trumpet/TrumpetSect/Sustain/5_A.wav",
+0.142,
+"fine-tuned"
+],
+[
+"Brass/trumpet-SEC-staccato.sfz",
+"libs/NoBudgetOrch2/Trumpet/TrumpetSect/Sustain/6_Db.wav",
+0.121,
+"fine-tuned"
+],
+[
+"Brass/trombone-SEC-sustain.sfz",
+"libs/NoBudgetOrch2/Trombone/TromboneSect/Sustain/4_Gb_p.wav",
+0.281,
+"fine-tuned"
+],
+[
+"Brass/trombone-SEC-staccato.sfz",
+"libs/NoBudgetOrch2/Trombone/TromboneSect/Sustain/4_Gb_p.wav",
+0.281,
+"fine-tuned"
+],
+[
+"Brass/tuba-SOLO-sustain.sfz",
+"libs/SSO/Samples/Tuba/tuba-sus-c#2-PB-loop.wav",
+0.14,
+"fine-tuned"
+],
+[
+"Brass/tuba-SOLO-sustain.sfz",
+"libs/SSO/Samples/Tuba/tuba-sus-e2-PB-loop.wav",
+0.16,
+"fine-tuned"
+],
+[
+"Brass/tuba-SOLO-sustain.sfz",
+"libs/SSO/Samples/Tuba/tuba-sus-c#3-PB-loop.wav",
+-0.174,
+"fine-tuned"
+],
+[
+"Brass/tuba-SOLO-staccato.sfz",
+"libs/SSO/Samples/Tuba/tuba-stc-rr1-e1-PB.wav",
+0.496,
+"fine-tuned"
+],
+[
+"Brass/tuba-SOLO-staccato.sfz",
+"libs/SSO/Samples/Tuba/tuba-stc-rr1-g1-PB.wav",
+-0.289,
+"fine-tuned"
+],
+[
+"Brass/tuba-SOLO-staccato.sfz",
+"libs/SSO/Samples/Tuba/tuba-stc-rr1-a#1-PB.wav",
+-0.319,
+"fine-tuned"
+],
+[
+"Brass/tuba-SOLO-staccato.sfz",
+"libs/SSO/Samples/Tuba/tuba-stc-rr2-e2-PB.wav",
+1.787,
+"re-keyed +2"
+],
+[
+"Brass/tuba-SOLO-staccato.sfz",
+"libs/SSO/Samples/Tuba/tuba-stc-rr1-g2-PB.wav",
+-0.122,
+"fine-tuned"
+],
+[
+"Brass/tuba-SOLO-staccato.sfz",
+"libs/SSO/Samples/Tuba/tuba-stc-rr2-a#2-PB.wav",
+1.98,
+"re-keyed +2"
+],
+[
+"Brass/tuba-SOLO-staccato.sfz",
+"libs/SSO/Samples/Tuba/tuba-stc-rr1-e3-PB.wav",
+-0.291,
+"fine-tuned"
+],
+[
+"Brass/tuba-SOLO-staccato.sfz",
+"libs/SSO/Samples/Tuba/tuba-stc-rr2-g3-PB.wav",
+1.997,
+"re-keyed +2"
+],
+[
+"Brass/tuba-SOLO-staccato.sfz",
+"libs/SSO/Samples/Tuba/tuba-stc-rr2-a#3-PB.wav",
+1.958,
+"re-keyed +2"
+],
+[
+"Brass/tuba-SOLO-staccato.sfz",
+"libs/SSO/Samples/Tuba/tuba-stc-rr2-c#4-PB.wav",
+2.021,
+"re-keyed +2"
+],
+[
+"Woodwinds/flute-SEC-sustain.sfz",
+"libs/NoBudgetOrch/FluteSect/6_Ab-PB.wav",
+0.173,
+"fine-tuned"
+],
+[
+"Woodwinds/flute-SEC-staccato.sfz",
+"libs/VSCO2-CE/Woodwinds/Flute/stac-PB/LDFlute_stac_A3_v2_rr1-PB.wav",
+-0.131,
+"fine-tuned"
+],
+[
+"Woodwinds/flute-SEC-staccato.sfz",
+"libs/NoBudgetOrch/FluteSect/6_Ab-PB.wav",
+0.173,
+"fine-tuned"
+],
+[
+"Woodwinds/bassoon-SEC-sustain.sfz",
+"libs/NoBudgetOrch/BassoonSect/Sustain/1_Bb.wav",
+0.154,
+"fine-tuned"
+],
+[
+"Woodwinds/bassoon-SEC-sustain.sfz",
+"libs/NoBudgetOrch/BassoonSect/Sustain/2_D.wav",
+0.205,
+"fine-tuned"
+],
+[
+"Woodwinds/bassoon-SEC-sustain.sfz",
+"libs/NoBudgetOrch/BassoonSect/Sustain/3_A.wav",
+0.157,
+"fine-tuned"
+],
+[
+"Woodwinds/bassoon-SEC-staccato.sfz",
+"libs/NoBudgetOrch/BassoonSect/Sustain/1_Bb.wav",
+0.154,
+"fine-tuned"
+],
+[
+"Woodwinds/bassoon-SEC-staccato.sfz",
+"libs/NoBudgetOrch/BassoonSect/Sustain/2_D.wav",
+0.265,
+"fine-tuned"
+],
+[
+"Woodwinds/bassoon-SEC-staccato.sfz",
+"libs/NoBudgetOrch/BassoonSect/Sustain/2_Ab.wav",
+0.152,
+"fine-tuned"
+],
+[
+"Woodwinds/bassoon-SEC-staccato.sfz",
+"libs/NoBudgetOrch/BassoonSect/Sustain/3_C.wav",
+0.166,
+"fine-tuned"
+],
+[
+"Woodwinds/bassoon-SEC-staccato.sfz",
+"libs/NoBudgetOrch/BassoonSect/Sustain/3_Gb.wav",
+0.175,
+"fine-tuned"
+],
+[
+"Woodwinds/bassoon-SEC-staccato.sfz",
+"libs/NoBudgetOrch/BassoonSect/Sustain/3_A.wav",
+0.257,
+"fine-tuned"
+],
+[
+"Woodwinds/bassoon-SEC-staccato.sfz",
+"libs/NoBudgetOrch/BassoonSect/Sustain/4_C.wav",
+0.128,
+"fine-tuned"
+],
+[
+"Woodwinds/bassoon-SEC-staccato.sfz",
+"libs/NoBudgetOrch/BassoonSect/Sustain/5_Db.wav",
+0.154,
+"fine-tuned"
+],
+[
+"Vocals/choir-MALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-male-c3-PB-loop.wav",
+0.135,
+"fine-tuned"
+],
+[
+"Vocals/choir-MALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-male-c#3-PB-loop.wav",
+0.288,
+"fine-tuned"
+],
+[
+"Vocals/choir-MALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-male-d3-PB-loop.wav",
+0.456,
+"fine-tuned"
+],
+[
+"Vocals/choir-MALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-male-e3-PB-loop.wav",
+-0.136,
+"fine-tuned"
+],
+[
+"Vocals/choir-MALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-male-f3-PB-loop.wav",
+-0.345,
+"fine-tuned"
+],
+[
+"Vocals/choir-MALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-male-e4-PB-loop.wav",
+-0.177,
+"fine-tuned"
+],
+[
+"Vocals/choir-MALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-male-f4-PB-loop.wav",
+-0.165,
+"fine-tuned"
+],
+[
+"Vocals/choir-FEMALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-female-g4-PB-loop.wav",
+-0.276,
+"fine-tuned"
+],
+[
+"Vocals/choir-FEMALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-female-f#5-PB-loop.wav",
+-0.141,
+"fine-tuned"
+],
+[
+"Vocals/choir-FEMALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-female-g5-PB-loop.wav",
+-0.195,
+"fine-tuned"
+],
+[
+"Vocals/choir-FEMALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-female-g#5-PB-loop.wav",
+-0.169,
+"fine-tuned"
+],
+[
+"Vocals/choir-FEMALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-female-a5-PB-loop.wav",
+-0.124,
+"fine-tuned"
+],
+[
+"Vocals/choir-FEMALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-female-a#5-PB-loop.wav",
+-0.133,
+"fine-tuned"
+],
+[
+"Vocals/choir-FEMALE-sustain.sfz",
+"libs/SSO/Samples/Chorus/chorus-female-b5-PB-loop.wav",
+-0.157,
+"fine-tuned"
+]
+]
