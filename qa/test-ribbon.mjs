@@ -5,7 +5,7 @@ import { open, boot, report } from './harness.mjs';
 const WIDTHS = [{name:'phone', w:390, h:844}, {name:'iPad', w:1024, h:768}, {name:'iPad landscape', w:1180, h:820}];
 const checks = [];
 const {page, errors, close} = await open();
-await boot(page, {});
+await boot(page, {full: true});
 
 for(const {name, w, h} of WIDTHS){
   await page.setViewportSize({width:w, height:h});

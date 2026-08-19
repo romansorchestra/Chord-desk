@@ -4,7 +4,7 @@ import { open, boot, report } from './harness.mjs';
 
 const {page, errors, close} = await open();
 const checks = [];
-await boot(page, {});
+await boot(page, {full: true});
 
 const res = await page.evaluate(() => {
   const D = window.__desk;

@@ -18,7 +18,9 @@ window.__desk = {
   get wet(){return wet}, set wet(v){wet=v},
   get engine(){return engine}, set engine(v){engine=v},
   get driftPool(){return driftPool},
-  buildDrift, makeModelledHall,
+  buildDrift, makeModelledHall, buildChain, setHall, tapDriftTest: tapDrift,
+  hallNodeSet: b => { hallNode.buffer = b; },
+  get outNode(){return outNode},
   get hallIsReal(){return hallIsReal}, get sectionBuffers(){return sectionBuffers},
   get decodedBundles(){return decodedBundles},
   get FAMILIES(){return FAMILIES}, get SECTION_INDEX(){return SECTION_INDEX},
@@ -28,9 +30,13 @@ window.__desk = {
   set piece(v){piece=v},
   get take(){return take}, set take(v){take=v},
   get shortArt(){return shortArt}, set shortArt(v){shortArt=v},
+  get dynamics(){return dynamics}, setDyn, showTab, renderLibrary, symFit, HOLD_MS, XFADE,
   get hold(){return hold},
   get loadedFamilies(){return loadedFamilies},
-  padOn, padOff, allOff, Voice, orchestrate, sectionRange, slotsFor,
+  padOn, padOff, allOff, Voice, SectionLayer, orchestrate, sectionRange, slotsFor,
+  guideScore, voiceMotion, sharedTones, paintGuide, fifthsDistance,
+  get guideFrom(){return guideFrom},
+  setGuideMode: m => { guideMode = m; paintGuide(); },
   loadEnsemble, loadSection, renderPads, renderRibbon, renderWork, buildSelects,
   midiBlob: (typeof buildMidi === 'function') ? buildMidi : null
 };
@@ -104,7 +110,8 @@ window.__probe = (function(){
     const D = window.__desk;
     if(an || !D || !D.ctx || !D.master) return false;
     an = D.ctx.createAnalyser(); an.fftSize = 2048;
-    D.master.connect(an);
+    // tap the end of the chain, so the dynamics stage is included
+    (D.outNode || D.master).connect(an);
     buf = new Float32Array(an.fftSize);
     return true;
   }
@@ -130,7 +137,7 @@ window.__probe = (function(){
   };
 })();`;
 
-export async function boot(page, {ensemble = null, waitArt = false} = {}){
+export async function boot(page, {ensemble = null, waitArt = false, full = false} = {}){
   await page.click('#start');
   await page.waitForFunction(() => window.__desk && window.__desk.ctx && window.__desk.master, null, {timeout: 30000});
   // the veil lifts when the opening ensemble has finished loading
@@ -138,10 +145,10 @@ export async function boot(page, {ensemble = null, waitArt = false} = {}){
                              null, {timeout: 90000});
   await page.evaluate(PROBE);
   await page.evaluate(() => window.__probe.attach());
-  if(ensemble){
-    await page.selectOption('#ensSel', ensemble);
-    await page.waitForFunction(() => !document.querySelector('#ensSel').disabled, null, {timeout: 60000});
-  }
+  // the companion bank file arrives just after the veil lifts
+  if(full) await page.waitForFunction(() => window.__desk.PIECES.length > 300,
+                                      null, {timeout: 90000});
+  if(ensemble) await setEnsemble(page, ensemble);
   if(waitArt){
     await page.waitForFunction(() => {
       const D = window.__desk;
@@ -151,6 +158,14 @@ export async function boot(page, {ensemble = null, waitArt = false} = {}){
       return want.every(a => fam.sections.every(s => !D.slotsFor(s.key,a) || D.sectionBuffers[s.key+'|'+a]));
     }, null, {timeout: 120000});
   }
+}
+
+/* the ensemble picker lives on the Sound page now */
+export async function setEnsemble(page, name){
+  await page.evaluate(() => window.__desk.showTab('sound'));
+  await page.selectOption('#ensSel', name);
+  await page.waitForFunction(() => !document.querySelector('#ensSel').disabled, null, {timeout: 90000});
+  await page.evaluate(() => window.__desk.showTab('play'));
 }
 
 export function report(name, checks){

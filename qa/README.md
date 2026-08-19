@@ -11,8 +11,10 @@ npx playwright install chromium      # skip if a browser is already present
 node test-play.mjs
 ```
 
-`harness.mjs` serves `../site` (edit `ROOT` if your layout differs) on a random
-port and boots the page.
+`harness.mjs` serves the repo root (edit `ROOT` if your layout differs) on a
+random port and boots the page. Several controls live on footer pages now, so
+use the exported `setEnsemble(page, name)` helper rather than selecting
+`#ensSel` directly.
 
 | File | Runtime | What it proves |
 |---|---|---|
@@ -21,7 +23,8 @@ port and boots the page.
 | `test-play.mjs` | ~1 min | pads, ribbon, multi-touch, the hold latch, record and playback, the MIDI and MusicXML exports, no stuck notes, and "play as written" landing on the written durations |
 | `test-ribbon.mjs` | ~2 min | all 248 ribbons fit their box at 390, 1024 and 1180 px; pad grid and ribbon always match the slot count |
 | `test-sections.mjs` | ~1 min | every chord in every bank orchestrates into playable section ranges, for every ensemble and articulation — 1.1 M note assignments — and reports the worst pitch stretch |
-| `test-offline.mjs` | ~10 min | with the network fully blocked, all 129,370 slot × ensemble combinations still build a sounding voice, and a rotating sample of 126 is listened to and measured |
+| `test-attack.mjs` | ~2 min | the trigger behaviour, measured off a real offline render: one attack per press, a held chord that does not fade over three seconds, a 25 ms tap that still plays the whole staccato, a pizzicato that rings out, and the dynamics wheel's range and its effect on a note already sounding |
+| `test-offline.mjs` | ~7 min | with the network fully blocked, all 129,370 slot × ensemble combinations still build a sounding voice, and a rotating sample of 126 is listened to and measured |
 
 ## One thing to know about the test browser
 
