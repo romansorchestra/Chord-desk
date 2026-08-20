@@ -501,11 +501,27 @@ body.dark #veil{ background:#15171B; }
       <option value="off">Off</option>
     </select></div>
     <button class="ctl" id="asWrittenBtn">Play as written</button>
-    <div class="field"><label for="bpm">&#9834;=</label><input id="bpm" type="number" min="30" max="200" value="72" inputmode="numeric"></div>
+    <button class="ctl" id="metBtn" aria-pressed="false">Click</button>
+    <div class="field"><label for="bpm">&#9834;=</label><input id="bpm" type="number" min="30" max="240" value="72" inputmode="numeric"></div>
+    <div class="field"><label for="meterSel">Time</label><select id="meterSel" aria-label="Time signature">
+      <option value="4/4" selected>4/4</option><option value="3/4">3/4</option>
+      <option value="2/4">2/4</option><option value="2/2">2/2</option>
+      <option value="5/4">5/4</option><option value="6/8">6/8</option>
+      <option value="7/8">7/8</option><option value="9/8">9/8</option>
+      <option value="12/8">12/8</option>
+    </select></div>
   </div>
 
   <div class="page" data-page="take">
     <button class="ctl rec" id="recBtn">Record</button>
+    <div class="field"><label for="countSel">Count-in</label><select id="countSel" aria-label="Count-in">
+      <option value="0">None</option><option value="1" selected>1 bar</option><option value="2">2 bars</option>
+    </select></div>
+    <div class="field"><label for="quantSel">Quantise</label><select id="quantSel" aria-label="Quantise">
+      <option value="0">Off</option><option value="1">1/4</option>
+      <option value="0.5" selected>1/8</option><option value="0.3333333">1/8 triplet</option>
+      <option value="0.25">1/16</option>
+    </select></div>
     <button class="ctl" id="playBtn" disabled>Play take</button>
     <button class="ctl" id="clearBtn" disabled>Clear</button>
     <button class="ctl primary" id="midiBtn" disabled>MIDI</button>
@@ -1093,7 +1109,7 @@ const HUMAN = {
   pitchRandom: 12,        // cents, +/-
   ampRandom:   1.5,       // dB, +/-
   delayRandom: 0.012,     // s, 0..n
-  attack:      0.40,      // s, sustains
+  attack:      0.15,      // s, sustains
   release:     1.90       // s, sustains
 };
 const MEZZO = 0.62;       // a plain press is a musical mezzo, not full tilt
@@ -1116,7 +1132,7 @@ const FAMILIES = {
       {key:"violins2", pan:-0.26, gain:0.95, double:{key:"violins1", pan:-0.44, gain:0.32, detune:-8, delay:0.019}},
       {key:"violins1", pan:-0.50, gain:0.95, double:{key:"violins2", pan:-0.32, gain:0.32, detune:+8, delay:0.015}}
     ],
-    attack:0.40, release:1.90, gain:1.00,
+    attack:0.15, release:1.90, gain:1.00,
     shorts:["staccato","pizzicato","accent"], tremolo:true
   },
   brass: {
@@ -1127,7 +1143,7 @@ const FAMILIES = {
       {key:"horns",     pan:-0.34, gain:0.95},
       {key:"trumpets",  pan:-0.08, gain:0.78}
     ],
-    attack:0.16, release:0.60, gain:0.74, shorts:["staccato"], tremolo:false
+    attack:0.11, release:0.60, gain:0.74, shorts:["staccato"], tremolo:false
   },
   choir: {
     label: "Choir",
@@ -1136,7 +1152,7 @@ const FAMILIES = {
       {key:"choir-women", pan:-0.16, gain:0.92}
     ],
     // no short articulation exists for the chorus — sustains only
-    attack:0.34, release:1.30, gain:1.45, shorts:[], tremolo:false
+    attack:0.20, release:1.30, gain:1.45, shorts:[], tremolo:false
   },
   woodwind: {
     label: "Woodwind",
@@ -1146,7 +1162,7 @@ const FAMILIES = {
       {key:"oboes",     pan:-0.16, gain:0.85},
       {key:"flutes",    pan:-0.30, gain:0.90}
     ],
-    attack:0.14, release:0.50, gain:0.55, shorts:["staccato"], tremolo:false
+    attack:0.10, release:0.50, gain:0.55, shorts:["staccato"], tremolo:false
   }
 };
 
@@ -1398,8 +1414,10 @@ function levelTone(v){ return 1350 * Math.pow(2, v * 3.15); }
 function swellAmount(v){ return v <= 0.34 ? 0 : Math.min(1, Math.pow((v - 0.34)/0.46, 1.3)); }
 /* The hall share rises as the orchestra backs off. */
 function wetTilt(v){ return 0.78 + 0.72 * (1 - Math.min(1, Math.max(0, v))); }
-/* A quiet entry is a slower entry. */
-function attackTilt(v){ return 1.55 - 0.78 * Math.min(1, Math.max(0, v)); }
+/* A quiet entry is a slower entry — but only a little.  A bow that takes half
+   a second to speak is a swell, not an entry, and every chord sounded like it
+   was fading in. */
+function attackTilt(v){ return 1.35 - 0.55 * Math.min(1, Math.max(0, v)); }
 let dynamics = MEZZO, dynGain = null, dynTone = null, swell = null, dynWet = null;
 function setDynamics(v, glide){
   dynamics = Math.max(0, Math.min(1, v));
@@ -1506,8 +1524,12 @@ class SectionLayer{
         const peak = fam.gain * sec.gain * per * ampRandom()
                      * (p.quiet ? 0.55 : 1) * seatGain * scale
                      * (short ? 1.0 : 1);
-        g.gain.setValueAtTime(0.0001, t0);
-        g.gain.exponentialRampToValueAtTime(Math.max(0.0002, peak), t0 + attack);
+        /* Linear, not exponential.  An exponential rise from near-silence
+           spends three quarters of its time inaudible and then arrives all at
+           once, which is why every entry sounded like a swell however short
+           the attack was set.  A linear ramp from zero is what a bow does. */
+        g.gain.setValueAtTime(0, t0);
+        g.gain.linearRampToValueAtTime(Math.max(0.0002, peak), t0 + attack);
         src.connect(life).connect(tilt).connect(g);
         const bus = (isExtra && swell) ? swell : master;
         if(pan){ g.connect(pan); pan.connect(bus); }
@@ -1530,7 +1552,7 @@ class SectionLayer{
   valueAt(p, t){
     if(t <= p.t0) return 0.0001;
     if(t >= p.t0 + p.attack) return p.peak;
-    return 0.0001 * Math.pow(Math.max(p.peak, 0.0002)/0.0001, (t - p.t0)/p.attack);
+    return Math.max(0.0001, p.peak * (t - p.t0) / p.attack);
   }
   ramp(p, t, target, dur, exp){
     const g = p.gain, from = Math.max(this.valueAt(p, t), 0.0001);
@@ -1545,6 +1567,18 @@ class SectionLayer{
   fade(when, dur){
     const t = when || ctx.currentTime;
     this.parts.forEach(p=>this.ramp(p, t, 0, dur, false));
+  }
+  /* come up (or down) to a fraction of the level this layer was built at, and
+     make that the level the release will anchor to.  Used when a held pad
+     hands the note from the stroke to the bow. */
+  swellTo(when, factor, dur){
+    const t = when || ctx.currentTime;
+    this.parts.forEach(p=>{
+      const target = p.base === undefined ? (p.base = p.peak, p.peak) : p.base;
+      const to = target * factor;
+      this.ramp(p, t, to, dur, false);
+      p.peak = to; p.t0 = t; p.attack = dur;   // so valueAt still tells the truth
+    });
   }
   stop(when, releaseOverride){
     if(this.oneShot) return;                 // rings out on its own
@@ -1564,13 +1598,16 @@ class SectionLayer{
    between a stroke and a held bow.
    ------------------------------------------------------------ */
 const XFADE = 0.15;              // crossing into tremolo
-/* The bow has to be audible *underneath* the stroke, not after it.  An
-   exponential from silence is still 20 dB down at three quarters of its
-   attack, so a long BOW_IN leaves a hole between the stroke dying and the
-   bow arriving — which is exactly what reads as a second note.  0.32 s puts
-   the bow at about -19 dB by 220 ms, while the stroke is still ringing, and
-   at full by 320 ms, as the stroke decays into it. */
-const BOW_IN = 0.32;
+/* The stroke and the bow are one note, so the bow must never *arrive*.
+   Any rise from silence — however short — is a second event to the ear, which
+   is what "staccato then sustain" was.  So the bow is at playing level within
+   18 ms, entering at its loop point so it has no attack of its own, but held
+   back to BOW_UNDER while the stroke speaks.  When the hold is confirmed it
+   comes up the remaining 4 dB over BOW_UP while the stroke is drawn down.
+   A 4 dB rise underneath a decaying staccato is a crescendo, not an entry. */
+const BOW_IN    = 0.018;   // how fast the bow reaches its holding level
+const BOW_UNDER = 0.62;    // how loud it sits while the stroke is speaking
+const BOW_UP    = 0.30;    // how long it takes to come the rest of the way
 function famOf(ensName){
   return (FAMILIES[ensName] && loadedFamilies.has(ensName) && engine === "sections") ? FAMILIES[ensName] : null;
 }
@@ -1628,12 +1665,13 @@ class Voice{
     this.quickRelease = true;
     this.timers.push(setTimeout(()=>{
       this.quickRelease = false;
-      /* Hold confirmed.  The stroke is now deliberately drawn down over its
-         own decay instead of being left to ring on its own shape beside the
-         bow — two decays with different curves is the other thing that reads
-         as two notes. */
-      if(this.shortLayer && !this.stopped && ctx)
-        this.shortLayer.fade(ctx.currentTime + 0.04, 0.42);
+      if(this.stopped || !ctx) return;
+      const t = ctx.currentTime;
+      /* Hold confirmed.  The bow comes up the last few dB and the stroke is
+         drawn down over its own decay — two decays with different shapes side
+         by side is the other thing that reads as two notes. */
+      if(this.sustainLayer) this.sustainLayer.swellTo(t, 1/BOW_UNDER, BOW_UP);
+      if(this.shortLayer)   this.shortLayer.fade(t + 0.03, 0.40);
     }, HOLD_MS));
     if(known !== undefined) this.quickRelease = known <= HOLD_MS/1000;
   }
@@ -1642,9 +1680,9 @@ class Voice{
     const t = when || ctx.currentTime;
     this.sustainLayer = new SectionLayer(this.ens, this.midis, t, "sustain",
                                          {entry: entry || "attack",
-                                          // the bow has to carry the note once
-                                          // the stroke has gone
-                                          scale: entry === "body" ? 1.0 : 1,
+                                          // under the stroke to begin with; it
+                                          // comes up if the finger stays down
+                                          scale: entry === "body" ? BOW_UNDER : 1,
                                           attack: entry === "body" ? BOW_IN : undefined});
     this.layers.push(this.sustainLayer);
   }
@@ -1668,7 +1706,7 @@ class Voice{
     if(this.legacy){ this.legacy.stop(when); this.legacy = null; return; }
     const t = when || ctx.currentTime;
     // let go inside the tap window and the bow is stopped before it arrives
-    if(this.sustainLayer && this.quickRelease) this.sustainLayer.stop(t, 0.10);
+    if(this.sustainLayer && this.quickRelease) this.sustainLayer.stop(t, 0.06);
     this.layers.forEach(l=>l.stop(t));            // one-shots ignore this
     this.layers = []; this.sustainLayer = null; this.tremLayer = null; this.shortLayer = null;
   }
@@ -1755,6 +1793,7 @@ let ensName = "strings";
 let hold = false;
 let recording = false;
 let recStart = 0;
+let countTimer = null;
 let take = [];              // {bar, notes, t, dur}
 const live = new Map();     // padIndex -> {voice, startedAt, evt}
 let playTimers = [];
@@ -2605,7 +2644,10 @@ function padOn(i, fromPlayback, opts){
   const v = midiSilent() ? SILENT_VOICE
           : new Voice(ensName, notes, undefined,
                       Object.assign(hold ? {dur: 99} : {}, opts || {}));
-  const evt = recording ? {bar:i+1, notes:notes.slice(), t:ctx.currentTime-recStart, dur:null} : null;
+  const evt = recording
+    ? {bar:i+1, notes:notes.slice(), t:ctx.currentTime-recStart,
+       tb:(ctx.currentTime-recStart)/spq(), dur:null, db:null}
+    : null;
   if(evt) take.push(evt);
   live.set(i,{voice:v, evt, notes});
   const el = padEl(i);
@@ -2622,7 +2664,10 @@ function padOff(i, force){
   cur.voice.stop();
   const elT = padEl(i);
   if(elT) elT.classList.remove("trem");
-  if(cur.evt && cur.evt.dur === null) cur.evt.dur = Math.max(0.12, (ctx.currentTime-recStart) - cur.evt.t);
+  if(cur.evt && cur.evt.dur === null){
+    cur.evt.dur = Math.max(0.12, (ctx.currentTime-recStart) - cur.evt.t);
+    cur.evt.db  = cur.evt.dur / spq();
+  }
   live.delete(i);
   const el = padEl(i);
   if(el) el.classList.remove("on");
@@ -2680,8 +2725,10 @@ window.addEventListener("keyup", e=>{
    ============================================================ */
 function takeSummary(){
   if(!take.length) return "No take yet";
-  const last = take.reduce((a,e)=>Math.max(a, e.t + (e.dur||0)), 0);
-  return `<b>${take.length}</b> chords · ${last.toFixed(1)}s`;
+  const bars = takeBars();
+  return `<b>${take.length}</b> chords &middot; ${bars} bar${bars===1?"":"s"} of ` +
+         `${meterTop}/${meterBottom} &middot; \u2669=${bpm()}` +
+         (quantBeat > 0 ? "" : " &middot; free");
 }
 function setStatus(html, warn){
   statusEl.innerHTML = html;
@@ -2703,10 +2750,33 @@ $("#recBtn").onclick = ()=>{
   padsEl.classList.toggle("armed", recording);
   Array.from(padsEl.children).forEach(p=>p.classList.toggle("armed", recording));
   if(recording){
-    take = []; recStart = ctx.currentTime;
-    setStatus("Recording");
+    take = [];
+    initAudio(); unmuteIOS();
+    const bars = countInBars;
+    if(bars > 0){
+      // the click starts now; the take starts on the downbeat after it
+      recording = false;                       // nothing is captured yet
+      metStart(-bars * meterTop);
+      recStart = ctx.currentTime + 0.12 + bars * meterTop * beatSec();
+      setStatus("Count-in\u2026");
+      countTimer = setTimeout(()=>{
+        countTimer = null;
+        if(b.textContent !== "Stop") return;   // stopped during the count-in
+        recording = true;
+        setStatus("Recording");
+      }, Math.max(0, (recStart - ctx.currentTime) * 1000));
+    }else{
+      recStart = ctx.currentTime;
+      if(metOn) metStart();
+      setStatus("Recording");
+    }
   }else{
-    for(const [,cur] of live) if(cur.evt && cur.evt.dur===null) cur.evt.dur = Math.max(0.12,(ctx.currentTime-recStart)-cur.evt.t);
+    if(countTimer){ clearTimeout(countTimer); countTimer = null; }
+    if(!metOn) metStop();
+    for(const [,cur] of live) if(cur.evt && cur.evt.dur===null){
+      cur.evt.dur = Math.max(0.12,(ctx.currentTime-recStart)-cur.evt.t);
+      cur.evt.db  = cur.evt.dur / spq();
+    }
     setStatus(takeSummary());
   }
   refreshButtons();
@@ -2735,7 +2805,8 @@ const playVoices = [];
 $("#playBtn").onclick = ()=>{
   if(playTimers.length){ stopPlayback(); return; }
   $("#playBtn").textContent = "Stop";
-  take.forEach(e=>{
+  if(metOn) metStart();
+  takeTimed().forEach(e=>{
     playTimers.push(setTimeout(()=>{
       midiNoteOn(e.notes);
       const v = midiSilent() ? SILENT_VOICE
@@ -2753,7 +2824,7 @@ $("#playBtn").onclick = ()=>{
       }, (e.dur||0.6)*1000));
     }, e.t*1000));
   });
-  const end = take.reduce((a,e)=>Math.max(a,e.t+(e.dur||0.6)),0);
+  const end = takeTimed().reduce((a,e)=>Math.max(a,e.t+(e.dur||0.6)),0);
   playTimers.push(setTimeout(stopPlayback, end*1000+900));
 };
 {
@@ -2804,6 +2875,93 @@ function stopPlayback(){
   $("#asWrittenBtn").textContent = "Play as written";
 }
 
+
+/* ============================================================
+   THE CLOCK
+   Tempo, meter, a metronome you can play to, and a take that is stored in
+   beats rather than seconds — so the tempo can be changed afterwards and the
+   whole take moves with it, and so what comes out as MIDI or MusicXML is in
+   the metre it was played in.
+   ============================================================ */
+let meterTop = 4, meterBottom = 4;
+let metOn = false, metBus = null, metTimer = null, metNext = 0, metBeat = 0;
+let countInBars = 1, quantBeat = 0.5;      // quantise grid, in quarter notes
+
+function spq(){ return 60 / bpm(); }                    // seconds per quarter
+function beatSec(){ return spq() * 4 / meterBottom; }   // seconds per counted beat
+function isCompound(){ return meterBottom === 8 && meterTop % 3 === 0 && meterTop > 3; }
+function quartersPerBar(){ return meterTop * 4 / meterBottom; }
+
+/* the click.  Straight to the output: it is not part of the orchestra, so it
+   does not go through the dynamics stage or the hall. */
+function metClick(when, level, hz){
+  if(!ctx) return;
+  if(!metBus){ metBus = ctx.createGain(); metBus.gain.value = 0.9; metBus.connect(ctx.destination); }
+  const o = ctx.createOscillator(), g = ctx.createGain();
+  o.type = "square"; o.frequency.value = hz;
+  const bp = ctx.createBiquadFilter();
+  bp.type = "bandpass"; bp.frequency.value = hz; bp.Q.value = 1.4;
+  g.gain.setValueAtTime(0, when);
+  g.gain.linearRampToValueAtTime(level * 0.20, when + 0.001);
+  g.gain.exponentialRampToValueAtTime(0.0001, when + 0.045);
+  o.connect(bp).connect(g).connect(metBus);
+  o.start(when); o.stop(when + 0.08);
+}
+
+/* scheduled ahead of time, because setTimeout is not a musician */
+function metPump(){
+  if(!ctx) return;
+  const horizon = ctx.currentTime + 0.20;
+  while(metNext < horizon){
+    const inBar = ((metBeat % meterTop) + meterTop) % meterTop;
+    const strong = inBar === 0;
+    const group = isCompound() && inBar % 3 === 0;
+    metClick(metNext, strong ? 1 : group ? 0.62 : 0.40,
+                      strong ? 1760 : group ? 1320 : 1050);
+    metNext += beatSec();
+    metBeat++;
+  }
+}
+function metStart(fromBeat){
+  initAudio(); unmuteIOS();
+  metBeat = fromBeat === undefined ? 0 : fromBeat;
+  metNext = ctx.currentTime + 0.12;
+  if(metTimer) clearInterval(metTimer);
+  metTimer = setInterval(metPump, 25);
+  metPump();
+}
+function metStop(){
+  if(metTimer) clearInterval(metTimer);
+  metTimer = null;
+}
+function setMet(on){
+  metOn = on;
+  const b = $("#metBtn");
+  if(b){ b.classList.toggle("toggled", metOn); b.setAttribute("aria-pressed", metOn ? "true" : "false"); }
+  if(metOn) metStart(); else if(!recording) metStop();
+}
+
+/* ---- the take, in beats ---- */
+function qz(b){ return quantBeat > 0 ? Math.round(b / quantBeat) * quantBeat : b; }
+/* what to play or write out: quantised where asked, at the tempo showing now */
+function takeTimed(){
+  const q = spq();
+  return take.map(e=>{
+    const tb = e.tb !== undefined ? e.tb : e.t / q;
+    const db = e.db !== undefined ? e.db : (e.dur || 0.6) / q;
+    const t0 = qz(tb);
+    // a chord never quantises away to nothing
+    const len = quantBeat > 0 ? Math.max(quantBeat, qz(db)) : Math.max(0.05, db);
+    return {notes: e.notes, bar: e.bar, t: t0 * q, dur: len * q, tb: t0, db: len};
+  }).sort((a,b)=>a.t-b.t);
+}
+function takeBars(){
+  const tt = takeTimed();
+  if(!tt.length) return 0;
+  const end = tt.reduce((a,e)=>Math.max(a, e.tb + e.db), 0);
+  return Math.max(1, Math.ceil(end / quartersPerBar()));
+}
+
 /* ============================================================
    6.  EXPORT
    ============================================================ */
@@ -2815,7 +2973,7 @@ function download(name, blob){
   setTimeout(()=>{ document.body.removeChild(a); URL.revokeObjectURL(url); }, 4000);
 }
 function slug(){ return (piece.composer.split(" ").pop()+"-"+piece.title).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,""); }
-function bpm(){ const v = parseInt($("#bpm").value,10); return (v>=30&&v<=200)?v:72; }
+function bpm(){ const v = parseInt($("#bpm").value,10); return (v>=30&&v<=240)?v:72; }
 
 /* ---- MIDI ---- */
 function vlq(n){
@@ -2830,10 +2988,12 @@ function u16(n){ return [(n>>>8)&255,n&255]; }
 
 function exportMIDI(){
   const PPQ = 480, tempo = bpm();
-  const secToTick = s => Math.max(0, Math.round(s * (tempo/60) * PPQ));
+  // straight from beats: the take was recorded against the clock, so nothing
+  // has to be guessed back out of seconds
+  const beatToTick = b => Math.max(0, Math.round(b * PPQ));
   const evts = [];
-  take.forEach(e=>{
-    const on = secToTick(e.t), off = secToTick(e.t + Math.max(e.dur||0.6, 0.12));
+  takeTimed().forEach(e=>{
+    const on = beatToTick(e.tb), off = beatToTick(e.tb + Math.max(e.db, 0.05));
     e.notes.forEach(n=>{
       evts.push({tick:on, type:0x90, note:n, vel:88});
       evts.push({tick:Math.max(off,on+20), type:0x80, note:n, vel:0});
@@ -2844,7 +3004,10 @@ function exportMIDI(){
   let track = [];
   const uspq = Math.round(60000000/tempo);
   track = track.concat(vlq(0), [0xFF,0x51,0x03,(uspq>>16)&255,(uspq>>8)&255,uspq&255]);
-  track = track.concat(vlq(0), [0xFF,0x58,0x04,4,2,24,8]);
+  // metre, and where the click falls in it — 6/8 is felt in two, not six
+  const denomPow = Math.round(Math.log(meterBottom)/Math.log(2));
+  const clocksPerClick = isCompound() ? 36 : Math.round(24 * 4 / meterBottom);
+  track = track.concat(vlq(0), [0xFF,0x58,0x04, meterTop, denomPow, clocksPerClick, 8]);
   const name = str2bytes(("Chord Desk - "+piece.title).replace(/[^\x20-\x7E]/g,"-"));
   track = track.concat(vlq(0), [0xFF,0x03,name.length], name);
   let last = 0;
@@ -2890,20 +3053,18 @@ function decomposeRest(len){
 }
 
 function exportXML(){
-  const DIV = 4;                       // 16th-note grid
-  const spb = 60/bpm();
-  const unit = spb/DIV;                // seconds per 16th
+  const DIV = 4;                       // divisions per quarter: a 16th grid
   const grid = [];                     // slot -> array of midi
-  take.forEach(e=>{
-    const start = Math.round(e.t/unit);
-    const len = Math.max(1, Math.round(Math.max(e.dur||0.6,0.12)/unit));
+  takeTimed().forEach(e=>{
+    const start = Math.round(e.tb * DIV);
+    const len = Math.max(1, Math.round(e.db * DIV));
     for(let s=start;s<start+len;s++){
       if(!grid[s]) grid[s]=[];
       e.notes.forEach(n=>{ if(grid[s].indexOf(n)<0) grid[s].push(n); });
     }
   });
   const total = grid.length;
-  const perMeasure = DIV*4;
+  const perMeasure = Math.round(DIV * quartersPerBar());
   const measures = Math.max(1, Math.ceil(total/perMeasure));
 
   function staffSeq(measureIdx, pick){
@@ -2952,7 +3113,7 @@ function exportXML(){
     body += `<measure number="${mi+1}">`;
     if(mi===0){
       body += `<attributes><divisions>${DIV}</divisions><key><fifths>${piece.fifths|0}</fifths></key>`+
-              `<time><beats>4</beats><beat-type>4</beat-type></time>`+
+              `<time><beats>${meterTop}</beats><beat-type>${meterBottom}</beat-type></time>`+
               `<staves>2</staves>`+
               `<clef number="1"><sign>G</sign><line>2</line></clef>`+
               `<clef number="2"><sign>F</sign><line>4</line></clef></attributes>`+
@@ -2984,6 +3145,31 @@ $("#xmlBtn").onclick = exportXML;
    ============================================================ */
 document.body.classList.add("dark");
 buildSelects(); renderWork(); renderPads(); renderRibbon(); refreshButtons();
+
+{
+  const mb = $("#metBtn");
+  if(mb) mb.onclick = ()=>setMet(!metOn);
+  const ms = $("#meterSel");
+  if(ms) ms.addEventListener("change", ()=>{
+    const [a,b] = ms.value.split("/").map(Number);
+    meterTop = a; meterBottom = b;
+    if(metTimer) metStart(metBeat % meterTop === 0 ? 0 : 0);
+    if(take.length) setStatus(takeSummary());
+  });
+  const cs = $("#countSel");
+  if(cs) cs.addEventListener("change", ()=>{ countInBars = +cs.value; });
+  const qs = $("#quantSel");
+  if(qs) qs.addEventListener("change", ()=>{
+    quantBeat = +qs.value;
+    if(take.length) setStatus(takeSummary());
+  });
+  const bp = $("#bpm");
+  if(bp) bp.addEventListener("change", ()=>{
+    if(metTimer) metStart(metBeat);
+    if(take.length) setStatus(takeSummary());
+  });
+}
+
 paintDyn(); initMidiIn(); initMidiOut();
 
 $("#start").onclick = async ()=>{
